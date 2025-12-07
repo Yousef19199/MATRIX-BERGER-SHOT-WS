@@ -1,51 +1,37 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مطعم برقر شوت 🍔</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مطعم برقر شوت 🍔</title>
+<link rel="stylesheet" href="style.css">
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>أهلًا بكـم بـمطـعـم بـرقـر شـوت 🍔</h1>
+<div class="container">
+    <h1>أهلًا بكـم بـمطـعـم بـرقـر شـوت 🍔</h1>
 
-        <div id="login-section">
-            <h2>تسجيل الدخول</h2>
-            <input type="text" id="username" placeholder="اسمك">
-            <input type="password" id="password" placeholder="كلمة المرور">
-            <button onclick="login()">تسجيل الدخول</button>
-            <p>لا تملك حساب؟ <button onclick="showRegister()">إنشاء حساب</button></p>
-        </div>
-
-        <div id="register-section" style="display:none;">
-            <h2>إنشاء حساب جديد</h2>
-            <input type="text" id="new-username" placeholder="اسمك">
-            <input type="password" id="new-password" placeholder="كلمة المرور">
-            <select id="role">
-                <option value="employee">موظف</option>
-                <option value="admin">مسؤول</option>
-            </select>
-            <button onclick="register()">إنشاء حساب</button>
-            <button onclick="hideRegister()">إلغاء</button>
-        </div>
-
-        <div id="menu-section" style="display:none;">
-            <h2>قائمة الطعام 🍔</h2>
-            <ul id="menu-list"></ul>
-            <button onclick="logout()">تسجيل خروج</button>
-        </div>
-
-        <div id="employees-section" style="display:none;">
-            <h2>قائمة الموظفين 👥</h2>
-            <ul id="employees-list"></ul>
-        </div>
+    <div id="customer-section">
+        <h2>أنت زبون</h2>
+        <p>يمكنك تصفح القائمة وطلب وجباتك.</p>
+        <button onclick="showMenu()">عرض قائمة الطعام</button>
     </div>
 
-    <script src="data.js"></script>
-    <script src="script.js"></script>
+    <div id="menu-section" style="display:none;">
+        <h2>قائمة الطعام 🍔</h2>
+        <ul id="menu-list"></ul>
+        <button onclick="backToCustomer()">رجوع</button>
+    </div>
+
+    <div id="employees-section" style="display:none;">
+        <h2>قائمة الموظفين 👥</h2>
+        <ul id="employees-list"></ul>
+    </div>
+</div>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
